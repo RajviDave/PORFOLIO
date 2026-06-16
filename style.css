@@ -126,8 +126,8 @@ nav {
 /* Sleek Specular Light Streak Overlay */
 /* Premium Giant 1:1 Square Metallic Profile Frame */
 .avatar-frame-34-metal {
-    width: 960px;
-    height: 960px;
+    width: 560px;
+    height: 485px;
     max-width: 100%; /* THE FIX: Keeps it from stretching off mobile screens */
     aspect-ratio: 1 / 1; /* Forces a perfect square grid */
     margin: 0 auto 30px;
