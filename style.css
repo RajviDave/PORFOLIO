@@ -78,19 +78,58 @@ nav {
 }
 
 /* Avatar Layout Element */
+/* Enhanced 3D Glassmorphic Photo Frame */
 .avatar-frame-metal {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 20px;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 25px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 50%, #ffffff 100%);
-    border: 3px solid #ffffff;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    /* Smooth metallic chrome border ring */
+    background: linear-gradient(135deg, #ffffff 0%, #ffcbd4 50%, #e09ba6 100%);
+    padding: 4px; /* Even rim thickness around the photo */
+    box-shadow: 
+        0 8px 25px rgba(224, 155, 166, 0.4), 
+        inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Perfect centering & high-definition picture rendering */
+.real-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Keeps the image itself perfectly round */
+    display: block;
+    
+    /* Enhance edge definition and fix low-res screenshot blur */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    filter: contrast(1.05) brightness(1.02);
+    
     position: relative;
-    overflow: hidden;
+    z-index: 1;
+}
+
+/* Specular Light Glint Overlay */
+.avatar-frame-metal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.35) 0%, 
+        rgba(255, 255, 255, 0.05) 40%, 
+        transparent 40.1%, 
+        transparent 100%);
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .photo-placeholder-text {
@@ -99,12 +138,9 @@ nav {
     color: #666666;
 }
 
-.real-profile-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
+
+
 
 /* Typographic Layout Definitions */
 .hero-name { font-size: 2.6rem; font-weight: 800; text-align: center; margin-bottom: 5px; }
