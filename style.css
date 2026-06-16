@@ -100,6 +100,113 @@ body {
     color: #000000;
 }
 
+/* Timeline Layout Container */
+.timeline-container {
+    position: relative;
+    padding: 20px 30px;
+    text-align: left;
+}
+
+/* Vertical metallic track line running down the timeline */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 45px;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to bottom, #ffb6c1, #ffffff, #e09ba6);
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Individual Timeline Segment Block */
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 50px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Polished metallic ring checkpoint pins */
+.timeline-badge {
+    position: absolute;
+    top: 5px;
+    left: -14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 50%, #ffffff 100%);
+    border: 2px solid #e09ba6;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+/* The structural card bounding each role */
+.timeline-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(224, 155, 166, 0.2);
+    border-radius: 6px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.timeline-header h3 {
+    font-size: 1.3rem;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555555;
+    background: #ffb6c1;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.company-name {
+    font-size: 1rem;
+    color: #e09ba6; /* Accent color for company names */
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Bullet item spacing inside cards */
+.experience-details {
+    list-style-position: inside;
+    list-style-type: square;
+    color: #222222;
+}
+
+.experience-details li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.experience-details li:last-child {
+    margin-bottom: 0;
+}
+
+.experience-details li strong {
+    color: #e09ba6;
+    font-weight: 600;
+}
+
 /* --- Specific Components --- */
 
 /* Navbar */
