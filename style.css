@@ -79,17 +79,19 @@ nav {
 
 /* Avatar Layout Element */
 /* Enhanced 3D Glassmorphic Photo Frame */
-.avatar-frame-metal {
-    width: 160px;
-    height: 160px;
+/* Premium 3:4 Metallic Profile Frame */
+.avatar-frame-34-metal {
+    width: 180px;  /* Clean desktop width */
+    height: 240px; /* Precise 3:4 proportion (180 * 4 / 3) */
     margin: 0 auto 25px;
-    border-radius: 50%;
-    /* Smooth metallic chrome border ring */
+    border-radius: 12px; /* Smooth rounded corners instead of a full circle */
+    
+    /* Polished metallic rim gradient matching your buttons */
     background: linear-gradient(135deg, #ffffff 0%, #ffcbd4 50%, #e09ba6 100%);
-    padding: 4px; /* Even rim thickness around the photo */
+    padding: 4px; /* Crisp metallic frame border gap */
     box-shadow: 
-        0 8px 25px rgba(224, 155, 166, 0.4), 
-        inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        0 10px 25px rgba(224, 155, 166, 0.4), 
+        inset 0 1px 3px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -97,35 +99,79 @@ nav {
     justify-content: center;
 }
 
-/* Perfect centering & high-definition picture rendering */
+/* 1:1 Pixel-Perfect Native Image Display */
 .real-profile-img {
     width: 100%;
     height: 100%;
     
-    /* THE FIX: Forces the browser to scale the 3:4 image without stretching or warping it */
-    object-fit: cover; 
-    object-position: center top; /* Centers your face perfectly in the frame */
+    /* THE FIX: Maps your 3:4 photo exactly onto the 3:4 frame without stretching */
+    object-fit: fill; 
     
-    border-radius: 50%;
+    border-radius: 8px; /* Slightly smaller than the outer rim for a nested look */
     display: block;
     position: relative;
     z-index: 1;
 
-    /* High-Definition Rendering Fixes for Chrome/Edge/Safari */
+    /* Max-definition screen rendering attributes */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: -moz-crisp-edges;
     image-rendering: o-crisp-edges;
     image-rendering: crisp-edges;
+    filter: contrast(1.03) brightness(1.01);
     
-    /* Slight contrast adjust to pop out details from the original asset */
-    filter: contrast(1.04) brightness(1.01);
-    
-    /* Hardware acceleration to stop browser-side blurring */
+    /* Prevents the browser from introducing anti-aliasing fuzziness */
     transform: translateZ(0);
-    backface-visibility: hidden;
 }
-/* Specular Light Glint Overlay */
-.avatar-frame-metal::after {
+
+/* Sleek Specular Light Streak Overlay */
+/* Premium Giant 1:1 Square Metallic Profile Frame */
+.avatar-frame-34-metal {
+    width: 960px;
+    height: 960px;
+    max-width: 100%; /* THE FIX: Keeps it from stretching off mobile screens */
+    aspect-ratio: 1 / 1; /* Forces a perfect square grid */
+    margin: 0 auto 30px;
+    border-radius: 24px; /* Slightly larger radius to match the bigger size */
+    
+    /* Elegant 3D metallic rim gradient border styling */
+    background: linear-gradient(135deg, #ffffff 0%, #ffcbd4 50%, #e09ba6 100%);
+    padding: 6px; /* Slightly thicker metallic frame border for scale */
+    box-shadow: 
+        0 15px 35px rgba(224, 155, 166, 0.4), 
+        inset 0 2px 6px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Perfect High-Definition Image Auto-Center */
+.real-profile-img {
+    width: 100%;
+    height: 100%;
+    
+    /* THE FIX: Automatically crops your 3:4 rectangular photo into a perfect square */
+    object-fit: cover; 
+    object-position: center 20%; /* Safely focuses on your face/shoulders and chops the vertical excess */
+    
+    border-radius: 18px;
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    /* Max-definition screen rendering attributes */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: o-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: contrast(1.02) brightness(1.01);
+    
+    transform: translateZ(0);
+}
+
+/* Specular Angled Glass Glare Overlay */
+.avatar-frame-34-metal::after {
     content: '';
     position: absolute;
     top: 0;
@@ -133,11 +179,11 @@ nav {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.35) 0%, 
-        rgba(255, 255, 255, 0.05) 40%, 
-        transparent 40.1%, 
+        rgba(255, 255, 255, 0.25) 0%, 
+        rgba(255, 255, 255, 0.03) 50%, 
+        transparent 50.1%, 
         transparent 100%);
-    border-radius: 50%;
+    border-radius: 18px;
     z-index: 2;
     pointer-events: none;
 }
