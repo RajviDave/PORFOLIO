@@ -1,703 +1,378 @@
-/* General Reset */
+/* Core Reset & Variables */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', 'Verdana', sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     color: #000000;
-    font-weight: 600; /* Bolder font matches the metallic aesthetic */
 }
 
-/* Color Variables */
-:root {
-    --metal-base-pink: #f2bac2; /* Base, matte metallic pink */
-    --metal-light-pink: #ffe6eb; /* Highlight */
-    --metal-shadow-pink: #e09ba5; /* Shadow pink */
-    --pure-white: #ffffff;
-    --text-black: #000000;
-    
-    /* Complex Gradient for Brushed Metallic Look */
-    --brushed-pink: linear-gradient(145deg, var(--metal-base-pink) 30%, var(--metal-light-pink) 50%, var(--metal-base-pink) 70%);
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background: #fdfdfd;
-    overflow-x: hidden;
+    background-color: #ffb6c1; /* Complete uniform pink background */
+    min-height: 100vh;
 }
 
-.page-body {
-    padding: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* --- The Metallic Effects (Key CSS) --- */
-
-/* Basic Metallic Bezel/Frame */
-.metallic-nav-container, 
-.metallic-display-bezel, 
-.metallic-sub-bezel, 
-.metallic-box,
-.profile-pic-metallic-frame {
-    background-color: var(--metal-base-pink);
-    border-radius: 12px;
-    box-shadow: 
-        inset 0 2px 2px rgba(255, 255, 255, 0.7), /* Top Inner Highlight */
-        inset 0 -3px 5px rgba(224, 155, 165, 0.9), /* Bottom Inner Shadow */
-        0 4px 6px rgba(0, 0, 0, 0.3); /* Base Shadow */
-    position: relative;
-    overflow: hidden;
-}
-
-/* Optional Brushed Texture Layer (SVG noise can be added here) */
-.metallic-nav-container::before, 
-.metallic-display-bezel::before, 
-.metallic-sub-bezel::before, 
-.metallic-box::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--brushed-pink);
-    opacity: 0.9;
-    z-index: -1;
-}
-
-/* Subtitle styling under your name */
-.subtitle {
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    margin-top: 10px;
-    color: #333333; /* Softened dark gray for premium subtitle look */
-    text-transform: uppercase;
-}
-
-/* Clear, legible paragraphs for the About Me panel */
-.about-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: justify;
-    margin-bottom: 15px;
-    color: #111111;
-}
-
-.about-text:last-child {
-    margin-bottom: 0;
-}
-
-/* Bold text accent that stays clean on the white background */
-.about-text strong {
-    color: #e09ba6; /* Metallic pink tone for key phrasing accent */
-    font-weight: 600;
-}
-
-/* Fallback fix for text visibility over pink elements */
-.title-metal-dark-fixed {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #000000;
-}
-
-/* Timeline Layout Container */
-.timeline-container {
-    position: relative;
-    padding: 20px 30px;
-    text-align: left;
-}
-
-/* Vertical metallic track line running down the timeline */
-.timeline-container::before {
-    content: '';
-    position: absolute;
+/* Metallic Header Navbar */
+.metallic-nav {
+    position: fixed;
     top: 0;
-    left: 45px;
-    height: 100%;
-    width: 3px;
-    background: linear-gradient(to bottom, #ffb6c1, #ffffff, #e09ba6);
-    border-left: 1px solid rgba(0,0,0,0.1);
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 182, 193, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-/* Individual Timeline Segment Block */
-.timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-    padding-left: 50px;
-}
-
-.timeline-item:last-child {
-    margin-bottom: 0;
-}
-
-/* Polished metallic ring checkpoint pins */
-.timeline-badge {
-    position: absolute;
-    top: 5px;
-    left: -14px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 50%, #ffffff 100%);
-    border: 2px solid #e09ba6;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 2;
-}
-
-/* The structural card bounding each role */
-.timeline-card {
-    background-color: #ffffff;
-    border: 1px solid rgba(224, 155, 166, 0.2);
-    border-radius: 6px;
-    padding: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-}
-
-.timeline-header {
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 5px;
 }
 
-.timeline-header h3 {
+.logo-metal {
+    font-weight: 800;
     font-size: 1.3rem;
-    color: var(--black);
-    font-weight: 600;
+    letter-spacing: 1.5px;
 }
 
-.timeline-date {
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 600;
-    color: #555555;
-    background: #ffb6c1;
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-/* Project Layout Structuring */
-.project-subsection-title {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--black);
-    margin: 20px auto 30px;
-    max-width: 1000px;
-    text-align: left;
-    border-bottom: 2px solid var(--white);
-    padding-bottom: 5px;
-}
-
-.separator-top {
-    margin-top: 60px;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* Polished Metal Edge Project Cards */
-.project-card-metal {
-    background-color: var(--white);
-    border-radius: 8px;
-    padding: 30px;
-    text-align: left;
-    position: relative;
-    border: 1px solid rgba(224, 155, 166, 0.4);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card-metal:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(224, 155, 166, 0.3);
-}
-
-.project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.project-header h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--black);
-    line-height: 1.3;
-}
-
-.project-badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 100%);
-    border: 1px solid #e09ba6;
-    padding: 3px 10px;
-    border-radius: 4px;
-    white-space: nowrap;
-}
-
-.project-description {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #444444;
-    margin-bottom: 20px;
-}
-
-.project-features {
-    list-style-type: disc;
-    list-style-position: inside;
-    margin-bottom: 20px;
-}
-
-.project-features li {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #222222;
-    margin-bottom: 8px;
-}
-
-.project-features strong {
-    color: #e09ba6;
-}
-
-/* Inline mini-tags for technology assets */
-.project-tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    border-top: 1px solid #f0f0f0;
-    padding-top: 15px;
-}
-
-.project-tech-stack span {
-    font-size: 0.8rem;
-    background-color: #fafafa;
-    border: 1px solid #e09ba6;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-weight: 500;
-}
-
-/* Work In Progress Container & Accent Ribbon */
-.wip-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.wip-card {
-    border-left: 5px solid #e09ba6;
-    overflow: hidden;
-}
-
-.wip-ribbon {
-    position: absolute;
-    top: 15px;
-    right: -30px;
-    background: linear-gradient(135deg, #ffb6c1 0%, #e09ba6 100%);
-    color: var(--black);
-    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 4px 30px;
-    transform: rotate(45deg);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.empty-project {
-    opacity: 0.75;
-    border-style: dashed;
+/* Master Layout Constraints */
+.portfolio-container {
+    max-width: 900px;
+    margin: 100px auto 40px;
+    padding: 0 20px;
 }
 
-.company-name {
-    font-size: 1rem;
-    color: #e09ba6; /* Accent color for company names */
-    margin-bottom: 15px;
-    font-weight: 500;
+.panel-section {
+    padding: 20px 0;
 }
 
-/* Achievements Container Layout */
-.achievement-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30px;
-    text-align: left;
+/* High-Contrast Glass/Metallic Card */
+.metallic-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.75) 100%);
+    border-radius: 16px;
+    padding: 40px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-.achievement-block {
-    flex: 1 1 calc(50% - 15px);
-    display: flex;
-    gap: 20px;
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid rgba(224, 155, 166, 0.15);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-}
-
-.full-width-block {
-    flex: 1 1 100%;
-}
-
-.border-top-metal {
-    border-top: 2px solid var(--base-pink);
-    padding-top: 30px;
-}
-
-/* Polished Checkpoint Circles for Icons */
-.achievement-icon-metal {
-    font-size: 1.8rem;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 100%);
-    border: 2px solid #e09ba6;
+/* Avatar Layout Element */
+.avatar-frame-metal {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
     border-radius: 50%;
+    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 50%, #ffffff 100%);
+    border: 3px solid #ffffff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.achievement-details {
+.photo-placeholder-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #666666;
+}
+
+.real-profile-img {
+    position: absolute;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.achievement-details h3 {
-    font-size: 1.25rem;
-    color: var(--black);
+/* Typographic Layout Definitions */
+.hero-name { font-size: 2.6rem; font-weight: 800; text-align: center; margin-bottom: 5px; }
+.hero-subtitle { font-size: 1.1rem; font-weight: 600; text-align: center; color: #444444; margin-bottom: 25px; }
+.metallic-divider { border: 0; height: 2px; background: linear-gradient(to right, transparent, #ffffff, transparent); margin: 20px 0; }
+
+.section-heading {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border-left: 5px solid #ffb6c1;
+    padding-left: 12px;
+}
+
+.about-text-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.highlight-text {
+    font-weight: 700;
+    background: rgba(255, 182, 193, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ==========================================================
+   IMAGE_F93585.PNG STYLE REFERENCE: GLOSSY PILL TOKENS
+   ========================================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ffffff;
+}
+
+.skill-category h3 {
+    font-size: 1rem;
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 5px;
 }
 
-/* Patent Special Highlight Card */
-.patent-card {
-    background-color: #fafafa;
-    border-left: 4px solid #e09ba6;
-    padding: 15px;
-    border-radius: 0 6px 6px 0;
+.full-width { grid-column: 1 / -1; }
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.patent-card h4 {
-    font-size: 1.1rem;
-    color: var(--black);
-    margin-bottom: 5px;
+/* Recreating the explicit token look from image_f93585.png */
+.pill-token {
+    background: linear-gradient(135deg, #ffffff 0%, #ffcbd4 50%, #ffffff 100%);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
     font-weight: 600;
+    border: 1px solid #e09ba6;
+    box-shadow: 0 4px 10px rgba(224, 155, 166, 0.3), inset 0 2px 4px rgba(255,255,255,0.8);
+    display: inline-block;
+    cursor: default;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.patent-card p {
-    font-size: 0.95rem;
-    color: #444444;
-    line-height: 1.5;
+.pill-token:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(224, 155, 166, 0.5);
 }
 
-/* Standardized Bullet Formats */
-.achievement-list {
+/* ==========================================================
+   IMAGE_F93283.PNG STYLE REFERENCE: METALLIC LEFT TIMELINE
+   ========================================================== */
+.timeline-wrapper-card {
+    padding-left: 20px;
+}
+
+.timeline-track-container {
+    position: relative;
+    padding-left: 40px;
+    margin-top: 20px;
+}
+
+/* Left side alignment track line from snapshot image_f93283.png */
+.timeline-vertical-line {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffcbd4, #ffffff, #e09ba6);
+    border-left: 1px solid rgba(224, 155, 166, 0.5);
+}
+
+.timeline-row-item {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.timeline-row-item:last-child {
+    margin-bottom: 0;
+}
+
+/* The round 3D marble checkpoint indicator sphere */
+.timeline-sphere-node {
+    position: absolute;
+    top: 12px;
+    left: -33px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 60%, #e09ba6 100%);
+    border: 1px solid #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), inset -2px -2px 4px rgba(0,0,0,0.1);
+    z-index: 5;
+}
+
+.timeline-inner-box {
+    background: #ffffff;
+    border: 1px solid rgba(224, 155, 166, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.time-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-header h4 { font-size: 1.2rem; font-weight: 700; }
+.date-badge { background: #ffcbd4; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+.company { color: #e09ba6; font-weight: 600; margin: 4px 0 12px; font-size: 0.95rem; }
+
+.bullet-list {
     list-style-type: square;
     padding-left: 15px;
 }
 
-.achievement-list li {
+.bullet-list li {
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 10px;
-    color: #333333;
-}
-
-.achievement-list li strong {
-    color: #e09ba6;
-}
-
-/* Volunteering Sub-Grid System */
-.volunteering-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.vol-item h5 {
-    font-size: 1rem;
-    color: #e09ba6;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.vol-item p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #555555;
-}
-
-/* Responsive collapse for smaller viewports */
-@media (max-width: 768px) {
-    .achievement-block {
-        flex: 1 1 100%;
-    }
-}
-
-/* Contact Section Layout */
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.contact-subtitle {
-    font-size: 1.1rem;
-    color: #333333;
-    margin-bottom: 30px;
-}
-
-/* Social Buttons Grid Layout */
-.contact-buttons-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-/* Polished Metallic Social Buttons */
-.btn-metal-social {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--black);
-    /* Reflective silver-pink gradient layout */
-    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 50%, #ffffff 100%);
-    border: 2px solid #e09ba6;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
-}
-
-.btn-metal-social .social-icon {
-    font-size: 1.2rem;
-}
-
-/* Hover State: Creates an elegant pop-out glint effect */
-.btn-metal-social:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(224, 155, 166, 0.5);
-    background: linear-gradient(135deg, #ffb6c1 0%, #ffffff 50%, #ffb6c1 100%);
-}
-
-/* Active Click State */
-.btn-metal-social:active {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 10px rgba(224, 155, 166, 0.3);
-}
-
-/* Responsive adjustment for mobile screen handling */
-@media (max-width: 480px) {
-    .btn-metal-social {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-/* Bullet item spacing inside cards */
-.experience-details {
-    list-style-position: inside;
-    list-style-type: square;
+    margin-bottom: 8px;
     color: #222222;
 }
 
-.experience-details li {
+.bullet-list li:last-child { margin-bottom: 0; }
+
+/* Projects Grid Templates */
+.sub-heading { font-size: 1.1rem; margin: 25px 0 15px; text-transform: uppercase; color: #444444; border-bottom: 1px solid #ffffff; padding-bottom: 4px;}
+.grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.inner-project-card { background: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 10px; border: 1px solid #ffffff; }
+.mini-badge { display: inline-block; background: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; margin: 5px 0 10px; border: 1px solid #e09ba6; }
+.wip-border { border-left: 4px solid #e09ba6; }
+
+/* ==========================================================
+   IMAGE_F93563.PNG STYLE REFERENCE: CIRCLE EMOJI HEADER BLOCKS
+   ========================================================== */
+.block-with-circle-header {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.block-with-circle-header:last-child { margin-bottom: 0; }
+
+/* 3D Circular structure housing the descriptive emoji characters */
+.header-circle-emoji {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffffff 0%, #ffcbd4 60%, #e09ba6 100%);
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(224, 155, 166, 0.4), inset -1px -1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.block-inner-content { width: 100%; }
+.block-inner-content h3 { font-size: 1.1rem; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px; border-bottom: 1px solid rgba(255,255,255,0.6); padding-bottom: 4px;}
+.patent-subbox { background: rgba(255,255,255,0.4); padding: 15px; border-radius: 8px; border-left: 4px solid #e09ba6; border-top: 1px solid #ffffff; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; }
+.patent-subbox h4 { margin-bottom: 4px; font-size: 1rem; }
+.patent-subbox p { font-size: 0.95rem; line-height: 1.5; color: #333333; }
+
+/* ==========================================================
+   IMAGE_F93607.PNG STYLE REFERENCE: METALLIC GLOSSY ACTION PILLS
+   ========================================================== */
+.contact-subtext { font-size: 1.05rem; margin-bottom: 25px; color: #333333; }
+.contact-links-row { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+
+/* Mirror finish button structure matching image_f93607.png */
+.btn-glossy-metallic {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ffffff 0%, #ffcbd4 50%, #ffffff 100%);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 700;
     font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 8px;
+    border: 2px solid #e09ba6;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06), inset 0 2px 4px rgba(255,255,255,0.9);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
 }
 
-.experience-details li:last-child {
-    margin-bottom: 0;
+.btn-emoji { font-size: 1.1rem; }
+
+.btn-glossy-metallic:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(224, 155, 166, 0.5);
+    background: linear-gradient(135deg, #ffcbd4 0%, #ffffff 50%, #ffcbd4 100%);
 }
 
-.experience-details li strong {
-    color: #e09ba6;
-    font-weight: 600;
+/* Footer layout elements */
+.clean-footer { text-align: center; padding: 25px; font-size: 0.85rem; font-weight: 600; }
+
+/* Responsive Grid Fallbacks */
+@media (max-width: 768px) {
+    .skills-grid, .grid-layout { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
 }
 
-/* --- Specific Components --- */
-
-/* Navbar */
-.metallic-nav {
+/* Project Title Alignment with GitHub Links */
+.project-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-}
-
-.metallic-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-.metallic-nav a {
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-/* Hero Panel (The Main Display) */
-.metallic-hero-panel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 0;
-}
-
-.metallic-display-bezel {
-    max-width: 900px;
-    width: 100%;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 30px;
-}
-
-.profile-pic-metallic-frame {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    border: 6px solid var(--pure-white);
-    box-shadow: 
-        0 2px 4px rgba(0, 0, 0, 0.2),
-        inset 0 1px 1px rgba(255, 255, 255, 0.6);
-}
-
-.profile-pic {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* Skills Grid Layout */
-.skill-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    padding: 30px;
-    text-align: left;
-}
-
-/* Individual Skill Categories */
-.skill-category {
-    background-color: #fafafa;
-    border: 1px solid rgba(224, 155, 166, 0.2);
-    border-radius: 6px;
-    padding: 20px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.02);
-}
-
-.skill-category h3 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    color: var(--black);
-    border-bottom: 2px solid var(--base-pink);
-    padding-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.full-width-category {
-    grid-column: 1 / -1;
-}
-
-/* Metallic Skill Tags */
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 2px;
 }
 
-.tag {
-    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 50%, #ffffff 100%);
-    border: 1px solid #e09ba6;
-    color: var(--black);
-    padding: 6px 14px;
-    font-size: 0.9rem;
-    font-weight: 500;
+.project-header h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Subtle Link Styling matching your metallic theme */
+.project-git-link {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: #ffffff;
+    padding: 3px 10px;
     border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: default;
+    border: 1px solid #e09ba6;
+    white-space: nowrap;
+    transition: all 0.2s ease;
 }
 
-/* Hover effect for a playful metallic glint */
-.tag:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(224, 155, 166, 0.4);
-    background: linear-gradient(135deg, #ffb6c1 0%, #ffffff 50%, #ffb6c1 100%);
-}
-
-h1 {
-    font-size: 3.5rem;
-    color: var(--text-black);
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
-    margin: 15px 0;
-}
-
-/* Secondary Sub-Bezel (About Me text display) */
-.metallic-sub-bezel {
-    padding: 15px 40px;
-    text-align: center;
-}
-
-.metallic-sub-bezel h2 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-}
-
-.lorem-placeholder {
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-/* Grid Boxes */
-.grid-section {
-    padding: 40px 0;
-}
-
-.content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.metallic-box {
-    height: 150px; /* Placeholder depth */
-    transition: transform 0.2s ease;
-}
-
-.metallic-box:hover {
-    transform: translateY(-5px); /* Interactive effect */
+.project-git-link:hover {
+    background: #ffcbd4;
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(224, 155, 166, 0.4);
 }

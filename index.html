@@ -3,352 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metallic Data Portfolio</title>
+    <title>Rajvi Dave | Data Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Metallic Navbar -->
-    <header class="metallic-nav-container">
-        <nav class="metallic-nav">
-            <div class="logo">DATA PORTFOLIO</div>
-            <ul>
-                <li><a href="#about">HOME</a></li>
-                <li><a href="#skills">ABOUT</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#experience">PUBLICATIONS</a></li>
-                <li><a href="#patents-awards">CONTACT</a></li>
+    <!-- Sticky Navigation Bar -->
+    <header class="metallic-nav">
+        <nav>
+            <div class="logo-metal">RAJVI DAVE</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Internship</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#patents-awards">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="page-body">
-        <!-- Main 'Display' Hero Section -->
-        <section id="hero" class="metallic-hero-panel">
-            <div class="metallic-display-bezel">
-                
-                <!-- Circular Metallic Picture Frame -->
-                <div class="profile-pic-metallic-frame">
-                    <img src="Profilephoto.png" alt="Profile" class="profile-pic">
+    <main class="portfolio-container">
+        
+        <!-- About Me Master Section -->
+        <section id="about" class="panel-section">
+            <div class="metallic-card">
+                <div class="avatar-frame-metal">
+                    <div class="photo-placeholder-text">Photo Here</div>
+                    <img src="your-photo.jpg" alt="Rajvi Dave" class="real-profile-img" onerror="this.style.display='none'">
                 </div>
 
-                <h1>MY PORTFOLIO</h1>
-
-                <!-- Secondary Sub-Bezel for 'About Me' -->
-                <section id="about" class="white-bg">
-                <h2 class="title-metal-dark-fixed">About Me</h2>
-                <div id="about-content" class="content-panel">
-                    <p class="about-text">
-                        I am a passionate data enthusiast eager to work at the intersection of <strong>Data Science, Data Engineering, and Applied Research</strong>. I am deeply interested in the intuition behind modern-day technology and absolutely love exploring the fundamentals of complex systems. 
-                    </p>
-                    <p class="about-text">
-                        Over the years, I have developed a keen interest in <strong>Computer Vision</strong>, diving into how machines interpret and understand visual data. I thrive on bridging theoretical concepts with engineering practices to solve impactful problems.
-                    </p>
-                </div>
-                </section>
-
+                <h1 class="hero-name">Rajvi Dave</h1>
+                <p class="hero-subtitle">Data Science | Data Engineering | Applied Research</p>
                 
+                <hr class="metallic-divider">
+                
+                <h2 class="section-heading">About Me</h2>
+                <div class="about-text-content">
+                    <p>I am a passionate data enthusiast eager to work at the intersection of <span class="highlight-text">Data Science, Data Engineering, and Applied Research</span>. I am deeply interested in the intuition behind modern-day technology and absolutely love exploring the fundamentals of complex systems.</p>
+                    <p>Over the years, I have developed a keen interest in <span class="highlight-text">Computer Vision</span>, diving into how machines interpret and understand visual data. I thrive on bridging theoretical concepts with engineering practices to solve impactful, real-world problems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section (with pill buttons from image_f93585.png) -->
+        <section id="skills" class="panel-section">
+            <div class="metallic-card">
+                <h2 class="section-heading">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="tags">
+                            <span class="pill-token">Python</span>
+                            <span class="pill-token">C++</span>
+                            <span class="pill-token">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Data Science & CV</h3>
+                        <div class="tags">
+                            <span class="pill-token">PyTorch</span>
+                            <span class="pill-token">OpenCV</span>
+                            <span class="pill-token">Scikit-Learn</span>
+                            <span class="pill-token">Pandas</span>
+                            <span class="pill-token">NumPy</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Data Engineering & DBs</h3>
+                        <div class="tags">
+                            <span class="pill-token">PySpark</span>
+                            <span class="pill-token">MySQL</span>
+                            <span class="pill-token">PostgreSQL</span>
+                            <span class="pill-token">Vector DBs</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks & BI</h3>
+                        <div class="tags">
+                            <span class="pill-token">FastAPI</span>
+                            <span class="pill-token">Flask</span>
+                            <span class="pill-token">Tableau</span>
+                            <span class="pill-token">Power BI</span>
+                        </div>
+                    </div>
+                    <div class="skill-category full-width">
+                        <h3>DevOps & Collaboration</h3>
+                        <div class="tags">
+                            <span class="pill-token">Git</span>
+                            <span class="pill-token">GitHub</span>
+                            <span class="pill-token">GitLab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internship Experience (With left timeline from image_f93283.png) -->
+        <section id="experience" class="panel-section">
+            <div class="metallic-card timeline-wrapper-card">
+                <h2 class="section-heading">Internship Experience</h2>
+                
+                <div class="timeline-track-container">
+                    <!-- Vertical Track Line -->
+                    <div class="timeline-vertical-line"></div>
+
+                    <!-- Node 1 -->
+                    <div class="timeline-row-item">
+                        <div class="timeline-sphere-node"></div>
+                        <div class="timeline-inner-box">
+                            <div class="time-header">
+                                <h4>Data Science Intern</h4>
+                                <span class="date-badge">March 2025 — May 2025</span>
+                            </div>
+                            <h5 class="company">D3S Healthcare Company</h5>
+                            <ul class="bullet-list">
+                               <li>Analyzed healthcare datasets to extract meaningful clinical insights using Python.</li>
+                               <li>Implemented statistical and predictive models using Scikit-Learn.</li>
+                               <li>Collaborated on building data pipelines, ensuring proper handling of records.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Node 2 -->
+                    <div class="timeline-row-item">
+                        <div class="timeline-sphere-node"></div>
+                        <div class="timeline-inner-box">
+                            <div class="time-header">
+                                <h4>Web Developer Intern</h4>
+                                <span class="date-badge">May 2024 — July 2024</span>
+                            </div>
+                            <h5 class="company">Shrim Technolab LLP</h5>
+                            <ul class="bullet-list">
+                                <li>Developed responsive web applications and interactive UI components using JavaScript.</li>
+                                <li>Optimized codebase architecture for better front-end performance.</li>
+                                <li>Gained critical experience in clean software architecture and version control loops.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
 
-        <section id="skills" class="pink-metallic-bg">
-        <h2 class="title-metal-dark-fixed">My Technical Skills</h2>
-        <div class="content-panel-light skill-grid-container">
-            
-            <div class="skill-category">
-                <h3>Languages</h3>
-                <div class="skill-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">C++</span>
-                    <span class="tag">JavaScript</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Data Science & CV</h3>
-                <div class="skill-tags">
-                    <span class="tag">PyTorch</span>
-                    <span class="tag">OpenCV</span>
-                    <span class="tag">Scikit-Learn</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">NumPy</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Data Engineering & DBs</h3>
-                <div class="skill-tags">
-                    <span class="tag">PySpark</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">Vector DBs</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Frameworks & BI</h3>
-                <div class="skill-tags">
-                    <span class="tag">FastAPI</span>
-                    <span class="tag">Flask</span>
-                    <span class="tag">Tableau</span>
-                    <span class="tag">Power BI</span>
-                </div>
-            </div>
-
-            <div class="skill-category full-width-category">
-                <h3>DevOps & Collaboration</h3>
-                <div class="skill-tags">
-                    <span class="tag">Git</span>
-                    <span class="tag">GitHub</span>
-                    <span class="tag">GitLab</span>
-                    <span class="tag">AWS</span>
-                    <span class="tag">Docker</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- White Section (Internship Experience) -->
-    <section id="experience" class="white-bg">
-        <h2 class="title-metal-dark-fixed">Internship Experience</h2>
-        <div id="experience-content" class="content-panel timeline-container">
-            
-            <!-- Internship 1: Data Science -->
-            <div class="timeline-item">
-                <div class="timeline-badge"></div>
-                <div class="timeline-card">
-                    <div class="timeline-header">
-                        <h3>Data Science Intern</h3>
-                        <span class="timeline-date">March 2025 — May 2025</span>
-                    </div>
-                    <h4 class="company-name">D3S Healthcare Company</h4>
-                    <ul class="experience-details">
-                        <li>Analyzed healthcare datasets to extract meaningful clinical insights using <strong>Python</strong> and data preprocessing libraries.</li>
-                        <li>Implemented statistical and predictive models using <strong>Scikit-Learn</strong> to identify medical trends and outcomes.</li>
-                        <li>Collaborated on building data pipelines, ensuring proper handling of sensitive health records and feature engineering tasks.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Internship 2: Web Developer -->
-            <div class="timeline-item">
-                <div class="timeline-badge"></div>
-                <div class="timeline-card">
-                    <div class="timeline-header">
-                        <h3>Web Developer Intern</h3>
-                        <span class="timeline-date">May 2024 — July 2024</span>
-                    </div>
-                    <h4 class="company-name">Shrim Technolab LLP</h4>
-                    <ul class="experience-details">
-                        <li>Developed responsive web applications and interactive UI components using <strong>JavaScript</strong>, HTML, and CSS.</li>
-                        <li>Optimized codebase architecture for better front-end performance, cross-browser compatibility, and seamless user experiences.</li>
-                        <li>Gained critical experience in clean software architecture, debugging workflows, and standard version control deployment.</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Pink Metallic Section (Projects) -->
-    <section id="projects" class="pink-metallic-bg">
-        <h2 class="title-metal-dark-fixed">Projects Portfolio</h2>
-        
-        <!-- Completed Projects Sub-section -->
-        <h3 class="project-subsection-title">Completed Work</h3>
-        <div class="project-grid">
-            
-            <!-- Project 1: Sleeping Irregularities Detection -->
-            <div class="project-card-metal">
-                <div class="project-header">
-                    <h4>Sleeping Irregularities Detection</h4>
-                    <span class="project-badge">Deep Learning</span>
-                </div>
-                <p class="project-description">
-                    Developed an end-to-end deep learning framework designed to analyze complex sequential biological data and flag anomalous sleep behaviors.
-                </p>
-                <ul class="project-features">
-                    <li>Engineered a robust data pipeline to process and sanitize over <strong>32 Lakhs+ (3.2M+) observations</strong> efficiently.</li>
-                    <li>Designed and trained a custom <strong>1D Deep Learning model</strong> optimized for sequence classification and irregularity detection.</li>
-                    <li>Integrated real-time data visualization frameworks to plot insights and model predictions onto intuitive graphical charts.</li>
-                </ul>
-                <div class="project-tech-stack">
-                    <span>Python</span> <span>PyTorch</span> <span>Pandas</span> <span>NumPy</span> <span>Matplotlib</span>
-                </div>
-            </div>
-
-            <!-- Project 2 Placeholder -->
-            <!-- Project 2: Skin Lesion Classification -->
-            <div class="project-card-metal">
-                <div class="project-header">
-                    <h4>Skin Lesion Classification</h4>
-                    <span class="project-badge">Computer Vision</span>
-                </div>
-                <p class="project-description">
-                    Developed an automated medical image diagnostic tool designed to classify dermoscopic skin structures to assist clinical screening procedures.
-                </p>
-                <ul class="project-features">
-                    <li>Utilized the specialized <strong>PH2 Dataset</strong> containing over 200+ high-resolution clinical images.</li>
-                    <li>Built and fine-tuned a custom convolutional neural network (CNN) model to categorize lesions into <strong>three distinct clinical classes</strong>.</li>
-                    <li>Applied extensive image pre-processing, data augmentation, and normalization techniques to maximize model accuracy on limited clinical data.</li>
-                </ul>
-                <div class="project-tech-stack">
-                    <span>Python</span> <span>OpenCV</span> <span>PyTorch</span> <span>Scikit-Learn</span> <span>NumPy</span>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Current Work-In-Progress Sub-section -->
-        <h3 class="project-subsection-title separator-top">Current Focus (In Progress)</h3>
-        <div class="project-grid">
-            
-            <div class="project-card-metal wip-card">
-                <div class="wip-ribbon">Active Build</div>
-                <div class="project-header">
-                    <h4>Skill Sync: AI Placement Readiness</h4>
-                    <span class="project-badge">Backend / AI</span>
-                </div>
-                <p class="project-description">
-                    Developing an intelligent, automated web application engineered to evaluate engineering students' placement readiness based on objective technical code signatures.
-                </p>
-                <ul class="project-features">
-                    <li>Integrating the <strong>GitHub API</strong> to programmatically parse and ingest user repositories for analysis.</li>
-                    <li>Building high-performance, asynchronous endpoints using <strong>FastAPI</strong> to handle requests and manage background analysis routines efficiently.</li>
-                    <li>Designing parsing engines to extract code metrics and evaluate skill alignment with current industry standards.</li>
-                </ul>
-                <div class="project-tech-stack">
-                    <span>Python</span> <span>FastAPI</span> <span>GitHub API</span> <span>Git</span>
-                </div>
-            </div>
-
-            <div class="project-card-metal wip-card">
-                <div class="wip-ribbon">Active Build</div>
-                <div class="project-header">
-                    <h4>Real-time Object Tracking System</h4>
-                    <span class="project-badge">Computer Vision</span>
-                </div>
-                <p class="project-description">
-                    Architecting a real-time localization and object-tracking system optimized for continuous edge stream deployments.
-                </p>
-                <ul class="project-features">
-                    <li>Implementing state-of-the-art <strong>YOLO (You Only Look Once)</strong> framework variations for low-latency spatial detection.</li>
-                    <li>Developing mathematical tracking algorithms to maintain unique object persistence IDs across dynamic frames.</li>
-                    <li>Optimizing frame-rate processing speeds utilizing <strong>OpenCV</strong> pipelines for video processing throughput.</li>
-                </ul>
-                <div class="project-tech-stack">
-                    <span>Python</span> <span>YOLO</span> <span>OpenCV</span> <span>PyTorch</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- White Background Section (Patents, Awards, Honors & Leadership) -->
-    <section id="patents-awards" class="white-bg">
-        <h2 class="title-metal-dark-fixed">Research, Honors & Leadership</h2>
-        <div class="content-panel achievement-container">
-            
-            <!-- Patent Block -->
-            <div class="achievement-block full-width-block">
-                <div class="achievement-icon-metal">🧬</div>
-                <div class="achievement-details">
-                    <h3>Patents & Intellectual Property</h3>
-                    <div class="patent-card">
-                        <h4>Virtual Reality Based Chemical Experiment System</h4>
-                        <p>Invented an immersive, VR-driven architecture designed to simulate high-stakes chemical reactions, providing a safe, scalable, and interactive pedagogical sandbox for applied science workflows.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Awards & Contests Block -->
-            <div class="achievement-block">
-                <div class="achievement-icon-metal">🏆</div>
-                <div class="achievement-details">
-                    <h3>Awards & Competitions</h3>
-                    <ul class="achievement-list">
-                        <li><strong>Best Mentee (2025)</strong> — Recognized for exceptional learning velocity and technical execution.</li>
-                        <li><strong>Best Transformed Student (2025)</strong> — Awarded for outstanding professional growth and academic excellence.</li>
-                        <li><strong>Runners-Up</strong> — Data Dice Decathlon Hackathon.</li>
-                        <li><strong>Second Runners-Up</strong> — Data Treasure Hunt Competition.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Honors Block -->
-            <div class="achievement-block">
-                <div class="achievement-icon-metal">🎖️</div>
-                <div class="achievement-details">
-                    <h3>Honors & Selections</h3>
-                    <ul class="achievement-list">
-                        <li><strong>Code in Place (2025)</strong> — Selected by Stanford University for their global competitive programming and computer science framework.</li>
-                        <li><strong>IEEE Sponsorship</strong> — Fully sponsored to attend the prestigious International Leadership Summit (ILS) in Delhi.</li>
-                        <li><strong>Teaching Assistant</strong> — Instructed Diploma Students in the fundamentals of Data Analytics & Data Visualization frameworks.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Volunteering & Leadership Block -->
-            <div class="achievement-block full-width-block border-top-metal">
-                <div class="achievement-icon-metal">🤝</div>
-                <div class="achievement-details">
-                    <h3>Leadership & Volunteering Experience</h3>
-                    <div class="volunteering-grid">
-                        <div class="vol-item">
-                            <h5>Placement Coordinator</h5>
-                            <p>Managed corporate outreach pipelines, streamlined candidate records, and coordinated placement logistics for the entire graduating batch.</p>
+        <!-- Projects Portfolio -->
+        <!-- Projects Portfolio -->
+        <section id="projects" class="panel-section">
+            <div class="metallic-card">
+                <h2 class="section-heading">Projects Portfolio</h2>
+                
+                <h3 class="sub-heading">Completed Projects</h3>
+                <div class="grid-layout">
+                    <div class="inner-project-card">
+                        <div class="project-header">
+                            <h4>Sleeping Irregularities Detection</h4>
+                            <!-- Replace '#' with your actual GitHub repository URL -->
+                            <a href="#" target="_blank" class="project-git-link" title="View Source Code">🔗 GitHub</a>
                         </div>
-                        <div class="vol-item">
-                            <h5>Treasurer</h5>
-                            <p>WIE (Women in Engineering), IEEE MEFGI Student Branch. Oversaw financial budgeting, event funding sheets, and resource allocations.</p>
+                        <span class="mini-badge">Deep Learning</span>
+                        <p>Engineered an end-to-end data pipeline processing <strong>32 Lakhs+ observations</strong>. Built a custom 1D Deep Learning model to detect sequential anomalies and plotted graphical metrics.</p>
+                    </div>
+                    
+                    <div class="inner-project-card">
+                        <div class="project-header">
+                            <h4>Skin Lesion Classification</h4>
+                            <!-- Replace '#' with your actual GitHub repository URL -->
+                            <a href="#" target="_blank" class="project-git-link" title="View Source Code">🔗 GitHub</a>
                         </div>
-                        <div class="vol-item">
-                            <h5>Secretary</h5>
-                            <p>Cloud Computing and DevOps Club. Organized technical bootcamps, managed club documentation, and structured continuous learning tracks.</p>
+                        <span class="mini-badge">Computer Vision</span>
+                        <p>Developed an automated diagnostic tool using the <strong>PH2 Dataset</strong> (200+ images) to classify structural anomalies into 3 distinct diagnostic classes.</p>
+                    </div>
+                </div>
+
+                <h3 class="sub-heading">Current Focus (In Progress)</h3>
+                <div class="grid-layout">
+                    <div class="inner-project-card wip-border">
+                        <div class="project-header">
+                            <h4>Skill Sync: AI Placement Readiness</h4>
+                            <!-- Replace '#' with your actual GitHub repository URL -->
+                            <a href="#" target="_blank" class="project-git-link" title="View Source Code">🔗 GitHub</a>
+                        </div>
+                        <span class="mini-badge">Backend / FastAPI</span>
+                        <p>Developing an automated web platform evaluating user repositories by parsing code signatures using the GitHub API and asynchronous FastAPI loops.</p>
+                    </div>
+                    
+                    <div class="inner-project-card wip-border">
+                        <div class="project-header">
+                            <h4>Object Tracking System</h4>
+                            <!-- Replace '#' with your actual GitHub repository URL -->
+                            <a href="#" target="_blank" class="project-git-link" title="View Source Code">🔗 GitHub</a>
+                        </div>
+                        <span class="mini-badge">Computer Vision</span>
+                        <p>Architecting continuous object localization tracking streams utilizing YOLO framework variations and frame-rate optimization via OpenCV.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patents & Awards (With circular emoji header tokens from image_f93563.png) -->
+        <section id="patents-awards" class="panel-section">
+            <div class="metallic-card">
+                <h2 class="section-heading">Research & Achievements</h2>
+                
+                <div class="block-with-circle-header">
+                    <div class="header-circle-emoji">🧬</div>
+                    <div class="block-inner-content">
+                        <h3>Patents & Intellectual Property</h3>
+                        <div class="patent-subbox">
+                            <h4>Virtual Reality Based Chemical Experiment System</h4>
+                            <p>Invented an immersive, VR-driven architecture designed to simulate high-stakes chemical reactions safely.</p>
                         </div>
                     </div>
                 </div>
+
+                <div class="block-with-circle-header">
+                    <div class="header-circle-emoji">🏆</div>
+                    <div class="block-inner-content">
+                        <h3>Awards & Competitions</h3>
+                        <ul class="bullet-list">
+                            <li><strong>Best Mentee (2025)</strong> — Recognized for learning velocity and execution.</li>
+                            <li><strong>Best Transformed Student (2025)</strong> — Awarded for outstanding professional growth.</li>
+                            <li><strong>Runners-Up</strong> — Data Dice Decathlon Hackathon.</li>
+                            <li><strong>Second Runners-Up</strong> — Data Treasure Hunt Competition.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="block-with-circle-header">
+                    <div class="header-circle-emoji">🏅</div>
+                    <div class="block-inner-content">
+                        <h3>Honors & Selections</h3>
+                        <ul class="bullet-list">
+                            <li><strong>Code in Place (2025)</strong> — Selected by Stanford University for their dynamic framework.</li>
+                            <li><strong>IEEE Sponsorship</strong> — Fully sponsored to attend the International Leadership Summit in Delhi.</li>
+                            <li><strong>Teaching Assistant</strong> — Instructed Diploma Students in Data Analytics & Visualization.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="block-with-circle-header">
+                    <div class="header-circle-emoji">🤝</div>
+                    <div class="block-inner-content">
+                        <h3>Leadership & Volunteering</h3>
+                        <ul class="bullet-list">
+                            <li><strong>Batch Placement Coordinator</strong> — Managed corporate outreach and logistics.</li>
+                            <li><strong>Treasurer</strong> — WIE, IEEE MEFGI Student Branch. Managed event funding allocations.</li>
+                            <li><strong>Secretary</strong> — Cloud Computing and DevOps Club. Organized technical bootcamps.</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- Metallic Contact Section -->
-    <section id="contact" class="pink-metallic-bg">
-        <h2 class="title-metal-dark-fixed">Let's Connect</h2>
-        <div class="content-panel-light contact-container">
-            <p class="contact-subtitle">Interested in collaborating or discussing opportunities? Reach out on any of the platforms below!</p>
-            
-            <div class="contact-buttons-grid">
-                <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/your-username" target="_blank" class="btn-metal-social">
-                    <span class="social-icon">👔</span>
-                    <span class="social-text">LinkedIn</span>
-                </a>
-
-                <!-- GitHub -->
-                <a href="https://github.com/your-username" target="_blank" class="btn-metal-social">
-                    <span class="social-icon">💻</span>
-                    <span class="social-text">GitHub</span>
-                </a>
-
-                <!-- Discord -->
-                <a href="https://discord.com/users/your-username" target="_blank" class="btn-metal-social">
-                    <span class="social-icon">💬</span>
-                    <span class="social-text">Discord</span>
-                </a>
-
-                <!-- Gmail -->
-                <a href="mailto:your.email@gmail.com" class="btn-metal-social">
-                    <span class="social-icon">✉️</span>
-                    <span class="social-text">Gmail</span>
-                </a>
+        <!-- Contact Buttons Section (With premium metallic buttons from image_f93607.png) -->
+        <section id="contact" class="panel-section">
+            <div class="metallic-card contact-center">
+                <h2 class="section-heading">Let's Connect</h2>
+                <p class="contact-subtext">Interested in collaborating or discussing opportunities? Reach out on any of the platforms below!</p>
+                <div class="contact-links-row">
+                    <a href="#" target="_blank" class="btn-glossy-metallic">
+                        <span class="btn-emoji">👔</span> LinkedIn
+                    </a>
+                    <a href="#" target="_blank" class="btn-glossy-metallic">
+                        <span class="btn-emoji">💻</span> GitHub
+                    </a>
+                    <a href="#" target="_blank" class="btn-glossy-metallic">
+                        <span class="btn-emoji">💬</span> Discord
+                    </a>
+                    <a href="mailto:your.email@gmail.com" class="btn-glossy-metallic">
+                        <span class="btn-emoji">✉️</span> Gmail
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
-    </div>
+        </section>
+
+    </main>
+
+    <footer class="clean-footer">
+        <p>&copy; 2026 Rajvi Dave. All Rights Reserved.</p>
+    </footer>
 
 </body>
-</html>
+</html> 
