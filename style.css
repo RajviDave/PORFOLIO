@@ -3,95 +3,264 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #000000; /* Strict use of black for text readability */
-}
-
-html {
-    scroll-behavior: smooth;
+    font-family: 'Segoe UI', 'Verdana', sans-serif;
+    color: #000000;
+    font-weight: 600; /* Bolder font matches the metallic aesthetic */
 }
 
 /* Color Variables */
 :root {
-    --main-pink: #ffb6c1;
+    --metal-base-pink: #f2bac2; /* Base, matte metallic pink */
+    --metal-light-pink: #ffe6eb; /* Highlight */
+    --metal-shadow-pink: #e09ba5; /* Shadow pink */
     --pure-white: #ffffff;
     --text-black: #000000;
+    
+    /* Complex Gradient for Brushed Metallic Look */
+    --brushed-pink: linear-gradient(145deg, var(--metal-base-pink) 30%, var(--metal-light-pink) 50%, var(--metal-base-pink) 70%);
 }
 
-/* Navigation */
-header {
-    background-color: var(--pure-white);
-    border-bottom: 2px solid var(--main-pink);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+body {
+    background: #fdfdfd;
+    overflow-x: hidden;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+.page-body {
     padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
+/* --- The Metallic Effects (Key CSS) --- */
+
+/* Basic Metallic Bezel/Frame */
+.metallic-nav-container, 
+.metallic-display-bezel, 
+.metallic-sub-bezel, 
+.metallic-box,
+.profile-pic-metallic-frame {
+    background-color: var(--metal-base-pink);
+    border-radius: 12px;
+    box-shadow: 
+        inset 0 2px 2px rgba(255, 255, 255, 0.7), /* Top Inner Highlight */
+        inset 0 -3px 5px rgba(224, 155, 165, 0.9), /* Bottom Inner Shadow */
+        0 4px 6px rgba(0, 0, 0, 0.3); /* Base Shadow */
+    position: relative;
+    overflow: hidden;
 }
 
-nav ul li {
-    margin-left: 20px;
+/* Optional Brushed Texture Layer (SVG noise can be added here) */
+.metallic-nav-container::before, 
+.metallic-display-bezel::before, 
+.metallic-sub-bezel::before, 
+.metallic-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--brushed-pink);
+    opacity: 0.9;
+    z-index: -1;
 }
 
-nav ul li a {
-    text-decoration: none;
+/* Subtitle styling under your name */
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+    color: #333333; /* Softened dark gray for premium subtitle look */
+    text-transform: uppercase;
+}
+
+/* Clear, legible paragraphs for the About Me panel */
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 15px;
+    color: #111111;
+}
+
+.about-text:last-child {
+    margin-bottom: 0;
+}
+
+/* Bold text accent that stays clean on the white background */
+.about-text strong {
+    color: #e09ba6; /* Metallic pink tone for key phrasing accent */
     font-weight: 600;
 }
 
-/* Sections Base */
-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.pink-bg {
-    background-color: var(--main-pink);
-}
-
-.white-bg {
-    background-color: var(--pure-white);
-}
-
-h2 {
+/* Fallback fix for text visibility over pink elements */
+.title-metal-dark-fixed {
     font-size: 2.5rem;
     margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #000000;
 }
 
-/* Hero Section */
-.hero-container {
-    max-width: 800px;
-    margin: 0 auto;
+/* --- Specific Components --- */
+
+/* Navbar */
+.metallic-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.metallic-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.metallic-nav a {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Hero Panel (The Main Display) */
+.metallic-hero-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.metallic-display-bezel {
+    max-width: 900px;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.profile-pic-metallic-frame {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 6px solid var(--pure-white);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
 }
 
 .profile-pic {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    border: 5px solid var(--pure-white);
     object-fit: cover;
-    margin-bottom: 20px;
-    background-color: var(--pure-white); /* Placeholder background */
 }
 
-/* Footer */
-footer {
-    background-color: var(--pure-white);
-    border-top: 2px solid var(--main-pink);
-    text-align: center;
+/* Skills Grid Layout */
+.skill-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    text-align: left;
+}
+
+/* Individual Skill Categories */
+.skill-category {
+    background-color: #fafafa;
+    border: 1px solid rgba(224, 155, 166, 0.2);
+    border-radius: 6px;
     padding: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.02);
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--black);
+    border-bottom: 2px solid var(--base-pink);
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.full-width-category {
+    grid-column: 1 / -1;
+}
+
+/* Metallic Skill Tags */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 50%, #ffffff 100%);
+    border: 1px solid #e09ba6;
+    color: var(--black);
+    padding: 6px 14px;
     font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+}
+
+/* Hover effect for a playful metallic glint */
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(224, 155, 166, 0.4);
+    background: linear-gradient(135deg, #ffb6c1 0%, #ffffff 50%, #ffb6c1 100%);
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--text-black);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    margin: 15px 0;
+}
+
+/* Secondary Sub-Bezel (About Me text display) */
+.metallic-sub-bezel {
+    padding: 15px 40px;
+    text-align: center;
+}
+
+.metallic-sub-bezel h2 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.lorem-placeholder {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Grid Boxes */
+.grid-section {
+    padding: 40px 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.metallic-box {
+    height: 150px; /* Placeholder depth */
+    transition: transform 0.2s ease;
+}
+
+.metallic-box:hover {
+    transform: translateY(-5px); /* Interactive effect */
 }

@@ -3,65 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Data Portfolio</title>
+    <title>Metallic Data Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">Data Portfolio</div>
+    <!-- Metallic Navbar -->
+    <header class="metallic-nav-container">
+        <nav class="metallic-nav">
+            <div class="logo">DATA PORTFOLIO</div>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Internship</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#patents-awards">Patents & Awards</a></li>
+                <li><a href="#about">HOME</a></li>
+                <li><a href="#skills">ABOUT</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#experience">PUBLICATIONS</a></li>
+                <li><a href="#patents-awards">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero" class="pink-bg">
-        <div class="hero-container">
-            <img src="Profilephoto.png" alt="My Profile Photo" class="profile-pic">
-            <h1>Hi, I'm a Data Enthusiast</h1>
-            <p>Welcome to my personal portfolio.</p>
+    <div class="page-body">
+        <!-- Main 'Display' Hero Section -->
+        <section id="hero" class="metallic-hero-panel">
+            <div class="metallic-display-bezel">
+                
+                <!-- Circular Metallic Picture Frame -->
+                <div class="profile-pic-metallic-frame">
+                    <img src="Profilephoto.png" alt="Profile" class="profile-pic">
+                </div>
+
+                <h1>MY PORTFOLIO</h1>
+
+                <!-- Secondary Sub-Bezel for 'About Me' -->
+                <section id="about" class="white-bg">
+                <h2 class="title-metal-dark-fixed">About Me</h2>
+                <div id="about-content" class="content-panel">
+                    <p class="about-text">
+                        I am a passionate data enthusiast eager to work at the intersection of <strong>Data Science, Data Engineering, and Applied Research</strong>. I am deeply interested in the intuition behind modern-day technology and absolutely love exploring the fundamentals of complex systems. 
+                    </p>
+                    <p class="about-text">
+                        Over the years, I have developed a keen interest in <strong>Computer Vision</strong>, diving into how machines interpret and understand visual data. I thrive on bridging theoretical concepts with engineering practices to solve impactful problems.
+                    </p>
+                </div>
+                </section>
+
+                
+
+            </div>
+        </section>
+
+        <section id="skills" class="pink-metallic-bg">
+        <h2 class="title-metal-dark-fixed">My Technical Skills</h2>
+        <div class="content-panel-light skill-grid-container">
+            
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <div class="skill-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data Science & CV</h3>
+                <div class="skill-tags">
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">Scikit-Learn</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">NumPy</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data Engineering & DBs</h3>
+                <div class="skill-tags">
+                    <span class="tag">PySpark</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Vector DBs</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Frameworks & BI</h3>
+                <div class="skill-tags">
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">Tableau</span>
+                    <span class="tag">Power BI</span>
+                </div>
+            </div>
+
+            <div class="skill-category full-width-category">
+                <h3>DevOps & Collaboration</h3>
+                <div class="skill-tags">
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">GitLab</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section id="about" class="white-bg">
-        <h2>About Me</h2>
-        <div id="about-content"></div>
-    </section>
+        <!-- Dynamic Content Grid (Placeholder Area) -->
+        <section class="grid-section">
+            <div class="content-grid">
+                <div class="metallic-box"></div>
+                <div class="metallic-box"></div>
+                <div class="metallic-box"></div>
+                <!-- ... additional boxes as needed ... -->
+            </div>
+        </section>
+    </div>
 
-    <section id="skills" class="pink-bg">
-        <h2>My Skills</h2>
-        <div id="skills-content"></div>
-    </section>
-
-    <section id="experience" class="white-bg">
-        <h2>Internship Experience</h2>
-        <div id="experience-content"></div>
-    </section>
-
-    <section id="projects" class="pink-bg">
-        <h2>Projects</h2>
-        <h3>Completed Projects</h3>
-        <div id="completed-projects"></div>
-        
-        <h3>Current Work-in-Progress</h3>
-        <div id="current-project"></div>
-    </section>
-
-    <section id="patents-awards" class="white-bg">
-        <h2>Patents, Awards & Honors</h2>
-        <div id="patents-content"></div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 | Built with Pink, White, and Data.</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
