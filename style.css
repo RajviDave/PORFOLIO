@@ -101,19 +101,29 @@ nav {
 .real-profile-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 50%; /* Keeps the image itself perfectly round */
+    
+    /* THE FIX: Forces the browser to scale the 3:4 image without stretching or warping it */
+    object-fit: cover; 
+    object-position: center top; /* Centers your face perfectly in the frame */
+    
+    border-radius: 50%;
     display: block;
-    
-    /* Enhance edge definition and fix low-res screenshot blur */
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    filter: contrast(1.05) brightness(1.02);
-    
     position: relative;
     z-index: 1;
-}
 
+    /* High-Definition Rendering Fixes for Chrome/Edge/Safari */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: o-crisp-edges;
+    image-rendering: crisp-edges;
+    
+    /* Slight contrast adjust to pop out details from the original asset */
+    filter: contrast(1.04) brightness(1.01);
+    
+    /* Hardware acceleration to stop browser-side blurring */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
 /* Specular Light Glint Overlay */
 .avatar-frame-metal::after {
     content: '';
