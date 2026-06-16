@@ -449,6 +449,72 @@ body {
     }
 }
 
+/* Contact Section Layout */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.contact-subtitle {
+    font-size: 1.1rem;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+/* Social Buttons Grid Layout */
+.contact-buttons-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Polished Metallic Social Buttons */
+.btn-metal-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--black);
+    /* Reflective silver-pink gradient layout */
+    background: linear-gradient(135deg, #ffffff 0%, #ffb6c1 50%, #ffffff 100%);
+    border: 2px solid #e09ba6;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
+}
+
+.btn-metal-social .social-icon {
+    font-size: 1.2rem;
+}
+
+/* Hover State: Creates an elegant pop-out glint effect */
+.btn-metal-social:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(224, 155, 166, 0.5);
+    background: linear-gradient(135deg, #ffb6c1 0%, #ffffff 50%, #ffb6c1 100%);
+}
+
+/* Active Click State */
+.btn-metal-social:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(224, 155, 166, 0.3);
+}
+
+/* Responsive adjustment for mobile screen handling */
+@media (max-width: 480px) {
+    .btn-metal-social {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* Bullet item spacing inside cards */
 .experience-details {
     list-style-position: inside;
