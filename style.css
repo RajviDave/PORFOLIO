@@ -1,0 +1,97 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000000; /* Strict use of black for text readability */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Color Variables */
+:root {
+    --main-pink: #ffb6c1;
+    --pure-white: #ffffff;
+    --text-black: #000000;
+}
+
+/* Navigation */
+header {
+    background-color: var(--pure-white);
+    border-bottom: 2px solid var(--main-pink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Sections Base */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.pink-bg {
+    background-color: var(--main-pink);
+}
+
+.white-bg {
+    background-color: var(--pure-white);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hero Section */
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--pure-white);
+    object-fit: cover;
+    margin-bottom: 20px;
+    background-color: var(--pure-white); /* Placeholder background */
+}
+
+/* Footer */
+footer {
+    background-color: var(--pure-white);
+    border-top: 2px solid var(--main-pink);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
